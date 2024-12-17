@@ -13,7 +13,7 @@ jobs:
 
     env:
       AWS_REGION: "us-east-1"
-      TF_ACTION_WORKING_DIR: "./"  # Adjust directory if needed
+      TF_ACTION_WORKING_DIR: "./"
 
     steps:
       # Step 1: Checkout Code
@@ -46,6 +46,6 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-      # # Step 7: Terraform Apply
-      # - name: Terraform Apply
-      #   run: terraform apply -auto-approve
+      # Step 7: Terraform Apply
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
