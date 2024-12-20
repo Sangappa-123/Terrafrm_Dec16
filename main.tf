@@ -3,6 +3,14 @@ provider "aws" {
   region = "us-east-1"
 }
 
+terraform {
+  backend "s3" {
+    bucket         = "terraformstate-1234"
+    key            = "oidc/terraform.tfstate"
+    region         = "us-east-1"
+  }
+}
+
 # VPC
 resource "aws_vpc" "main_vpc" {
   cidr_block           = "10.0.0.0/16"
